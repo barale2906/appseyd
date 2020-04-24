@@ -13,3 +13,8 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+/* barra de navegación */
+require('./components/Header');
+/* encabezado sin login */
+require('./components/Encab');
+
