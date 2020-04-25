@@ -1,33 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SEYD S.A.S</title>
     <link rel="icon" href="{{ asset('dist/img/logi.ico')}}" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-   <!-- Font Awesome Icons -->
-   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
-   <!-- IonIcons -->
-   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-   <!-- Theme style -->
-   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}}">
-   <!-- Google Font: Source Sans Pro -->
-   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <!-- css adicionales -->
-    @yield('cssadic')
 
 
+     <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- IonIcons -->
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+        <link rel="stylesheet" href=" {{ asset('dist/css/adminlte.min.css')}}">
 
+    <!-- DataTables -->
+        <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- cdn Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    @yield('cssadi')
 
 
 </head>
-<body class="hold-transition sidebar-collapse ">
+<body class="hold-transition sidebar-mini ">
     <div class="wrapper">
+
         @if (Route::has('login'))
 
             @auth
@@ -145,7 +162,7 @@
                             <a class="nav-link" data-widget="control-sidebar" data-slide="true" role="button"  href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                        <i class="fas fa-sign-out-alt"></i>
+                                           <i class="fas fa-sign-out-alt"></i>
 
                             </a>
 
@@ -158,7 +175,7 @@
                     </nav>
                     <!-- /.navbar -->
 
-                    <!-- Main Sidebar Container -->
+                     <!-- Main Sidebar Container -->
                     <aside class="main-sidebar sidebar-dark-primary elevation-4">
                         <!-- Brand Logo -->
                         <a href="index3.html" class="brand-link">
@@ -228,10 +245,14 @@
             @endauth
 
         @endif
+
+
         <section className="content">
             @yield('content')
         </section>
+        <!-- .content -->
     </div>
+    <!-- Main Footer -->
     <footer class="main-footer">
         <strong>Copyright &copy; 2020 - 2025 </a>.</strong>
         Todos los Derchos Reservados - <small>Adecuación plantilla AdminLTE.io</small>.
@@ -240,24 +261,74 @@
         </div>
     </footer>
 
+
+
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
+
+
     <!-- Bootstrap -->
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- jsadicional -->
-    @yield('jsadicional')
+
+
+
+    <!-- SCRIPTS BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <!-- AdminLTE -->
     <script src="{{ asset('dist/js/adminlte.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
 
     <!-- OPTIONAL SCRIPTS -->
     <script src="{{ asset('plugins/chart.js/Chart.min.js')}}"></script>
     <script src="{{ asset('dist/js/demo.js')}}"></script>
     <script src="{{ asset('dist/js/pages/dashboard3.js')}}"></script>
 
-     <!-- jsespec -->
-     @yield('jsespec')
+    @yield('jsadicionales')
+
+    @yield('scripts')
+
+
+    <!-- DataTables -->
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+
+
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 
 
 
 </body>
+
 </html>

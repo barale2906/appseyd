@@ -15,7 +15,7 @@
                     <img src={{ asset('dist/img/900474371_logo.jpg')}} class="card-img-top" alt="SOMOS ENVIOS Y DILIGENCIAS S.A.S."/>
                 </div>
                 <div class="form-group row">
-                    <label for="usuario" class="col-md-4 col-form-label text-md-right">{{ __('Usuario') }}</label>
+                    <label for="usuario" class="col-md-4 col-form-label text-md-right">{{ __('Usuario / cc') }}</label>
 
                     <div class="col-md-8">
                         <input id="usuario" type="number" class="form-control @error('Usuario') is-invalid @enderror" name="usuario"

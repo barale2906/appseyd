@@ -17,4 +17,6 @@ require('./components/Example');
 require('./components/Header');
 /* encabezado sin login */
 require('./components/Encab');
+/* Listado de Elementos */
+require('./components/ModLista');
 
